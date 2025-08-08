@@ -40,7 +40,7 @@
 ## 🐳 Despliegue **rápido** con Docker
 
 ```bash
-git clone https://github.com/David-Carr-C/lacomerexamentecnico.git
+git clone git@github.com:David-Carr-C/lacomerexamentecnico.git
 cd lacomerexamentecnico
 docker compose up -d --build
 ```
