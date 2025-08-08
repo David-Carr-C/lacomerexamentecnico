@@ -29,8 +29,8 @@
 | `copomex.token` | **Token personal** para consumir el API de COPOMEX. | `e06e2db6-982a-…` |
 | `copomex.base-url` | URL base del servicio COPOMEX. | `https://api.copomex.com` |
 | `spring.datasource.url` | Cadena JDBC hacia MySQL. | `jdbc:mysql://localhost:3306/lacomer_usuarios` |
-| `spring.datasource.username` | Usuario con permisos sobre la BD. | `root` |
-| `spring.datasource.password` | Contraseña de dicho usuario. | `lacomerroot` |
+| `spring.datasource.username` | Usuario con permisos sobre la BD. | `lacomer` |
+| `spring.datasource.password` | Contraseña de dicho usuario. | `lacomerpass` |
 | `spring.jpa.hibernate.ddl-auto` | Estrategia de creación de esquema. | `none` (solo scripts) |
 | `server.port` | Puerto HTTP donde corre la app. | `8080` |
 | `management.endpoints.web.base-path` | Prefijo para endpoints Actuator. | `/secret` |
@@ -39,7 +39,10 @@
 ---
 
 ## 🐳 Despliegue **rápido** con Docker
-
+*Preferente usar una VPS de AWS, Azure, GCP o similar con Debian 12*
+1. Instalar docker
+2. Instalar docker compose
+3. Ejecutar:
 ```bash
 git clone git@github.com:David-Carr-C/lacomerexamentecnico.git
 cd lacomerexamentecnico
@@ -47,6 +50,7 @@ docker compose up -d --build
 ```
 
 ## 🖥️ Despliegue **manual** (sin Docker)
+*Preferente usar una VPS de AWS, Azure, GCP o similar con Debian 12.*
 1. Clonar el repositorio
 2. Instalar MySQL 8.4.6
 3. Instalar Java 21 y Maven 3.8.7
