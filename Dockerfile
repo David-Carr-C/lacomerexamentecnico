@@ -12,13 +12,5 @@ COPY src /app/src
 RUN mvn clean package -DskipTests
 EXPOSE 8080
 
-# Copiar el archivo jar generado al contenedor
-COPY target/*.jar /app/app.jar
-CMD ["java", "-jar", "app.jar"]
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
-
-#FROM openjdk:21-jdk-slim
-#COPY target/*.jar /app/app.jar
-#WORKDIR /app
-#EXPOSE 8080
-#CMD ["java", "-jar", "app.jar"]
+# Ejecutar
+CMD ["java", "-jar", "target/LaComerExamenTecnico-0.0.1-SNAPSHOT.jar"]
