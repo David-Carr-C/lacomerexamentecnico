@@ -3,9 +3,15 @@ package org.examen.tecnico.lacomerexamentecnico.payload.request;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UsuarioRequest {
     @NotBlank(message = "El nombre es obligatorio")
     private String nombre;

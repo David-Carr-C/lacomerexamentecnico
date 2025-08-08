@@ -1,6 +1,7 @@
 package org.examen.tecnico.lacomerexamentecnico.payload.response;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,15 +10,16 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class DireccionResponse{
-    String calle;
-    String numeroExterior;
-    String numeroInterior;
-    String codigoPostal;
-    String colonia;
-    String municipio;
-    String estado;
-    String pais;
-    LocalDateTime fechaCreacion;
-    LocalDateTime fechaActualizacion;
+    private String calle;
+    private String numeroExterior;
+    private String numeroInterior;
+    private String codigoPostal;
+    private String colonia;
+    private String municipio;
+    private String estado;
+    private String pais;
+    private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaActualizacion;
 }

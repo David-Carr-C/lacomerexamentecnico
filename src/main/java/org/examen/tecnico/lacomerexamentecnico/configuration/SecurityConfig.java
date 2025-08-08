@@ -2,6 +2,7 @@ package org.examen.tecnico.lacomerexamentecnico.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -20,6 +21,8 @@ public class SecurityConfig {
                         .requestMatchers("/secret/**").hasRole("MONITOR")
                         .requestMatchers("/swagger-ui.html", "/v3/api-docs/**", "/swagger-ui/**", "/webjars/**").permitAll()
                         .anyRequest().authenticated())
+                .formLogin(Customizer.withDefaults())
+                .logout(Customizer.withDefaults())
                 .build();
     }
 }

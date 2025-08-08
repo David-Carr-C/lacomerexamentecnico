@@ -2,9 +2,15 @@ package org.examen.tecnico.lacomerexamentecnico.payload.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
-import lombok.Getter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Getter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class DireccionRequest {
     /**
      * Copomex solo entrega informacion si tu tienes

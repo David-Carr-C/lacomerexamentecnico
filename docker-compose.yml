@@ -5,23 +5,38 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: lacomerroot
-      MYSQL_DATABASE: lacomer
+      MYSQL_DATABASE: lacomer_usuarios
+      MYSQL_USER: lacomer
+      MYSQL_PASSWORD: lacomerpass
       TZ: America/Mexico_City
       MYSQL_CHARACTER_SET_SERVER: utf8mb4
-      MYSQL_COLLATION_SERVER: utf8mb4_unicode_ci
+      MYSQL_COLLATION_SERVER: utf8mb4_0900_ai_ci
     ports:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+      - ./src/main/resources/db:/docker-entrypoint-initdb.d
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 10s
       timeout: 5s
       retries: 5
-    networks:
-      - backend
+    network_mode: host
+  springboot:
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: springboot_app
+    restart: unless-stopped
+    environment:
+      DB_HOST: mysql
+      TZ: America/Mexico_City
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql:
+        condition: service_healthy
+    network_mode: host
 
 volumes:
   db_data:
-networks:
-  backend:

@@ -1,4 +1,7 @@
 /* ---------- schema.sql ---------- */
+CREATE USER IF NOT EXISTS lacomer@'%'
+  IDENTIFIED BY 'lacomerpass';
+
 DROP DATABASE IF EXISTS lacomer_usuarios;
 CREATE DATABASE IF NOT EXISTS lacomer_usuarios
   DEFAULT CHARACTER SET utf8mb4
@@ -45,3 +48,6 @@ VALUES ('Juan', 'Pérez', 'López', 'juan.perez@ejemplo.com');
 
 INSERT INTO direcciones (usuario_id, calle, numero_exterior, codigo_postal, colonia, municipio, estado)
 VALUES (1, 'Av. Paseo de la Reforma', '123', '06600', 'Juárez', 'Cuauhtémoc', 'Ciudad de México');
+
+GRANT ALL PRIVILEGES ON lacomer_usuarios.* TO 'lacomer' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
