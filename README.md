@@ -87,3 +87,17 @@ puedes usar el siguiente enlace:
 - http://localhost:8080/v3/api-docs
 
 ## 📸 Pantallas del funcionamiento
+### Obtener Usuarios:
+![img.png](img.png)
+
+### Obtener Usuario por ID:
+![img_1.png](img_1.png)
+
+### Eliminar Usuario:
+![img_2.png](img_2.png)
+
+### Crear Usuario:
+![img_3.png](img_3.png)
+
+### Actualizar Usuario:
+![img_4.png](img_4.png)
