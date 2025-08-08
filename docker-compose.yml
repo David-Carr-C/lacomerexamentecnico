@@ -21,7 +21,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    network_mode: host
   springboot:
     build:
         context: .
@@ -36,7 +35,6 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
-    network_mode: host
 
 volumes:
   db_data:

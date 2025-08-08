@@ -1,4 +1,4 @@
-## 📚 Diccionario rápido
+## 📚 Índice
 
 | Índice                                                                   | 
 |--------------------------------------------------------------------------|
@@ -12,12 +12,13 @@
 ---
 
 ### ⚙️ Requisitos previos
-| Herramienta | Versión mínima | Notas |
-|-------------|----------------|-------|
-| **Java**    | 21               | Text-blocks y `Record` |
-| **Maven**   | 3.9            | Wrapper `./mvnw` incluido |
-| **MySQL**   | 8.4.6          | Sólo en despliegue manual |
-| **Docker**  | 28.3.3 Community | Opcional |
+| Herramienta | Versión mínima | Notas                         |
+|-------------|----------------|-------------------------------|
+| **OS**       | Linux          | Debian GNU/Linux 12 (bookworm) |
+| **Java**    | 21             | Virtual Thread 21             |
+| **Maven**   | 3.9            | Wrapper `./mvnw` incluido     |
+| **MySQL**   | 8.4.6          | Sólo en despliegue manual     |
+| **Docker**  | 28.3.3 Community | Opcional                      |
 
 ---
 
@@ -57,7 +58,6 @@ docker compose up -d --build
 ```
 mysql -u root -p < src/main/resources/db/script.sql
 ```
-   - Asegúrate de que el usuario `root` tenga la contraseña `lacomerroot`.
 3. Complicación del proyecto:
    ```bash
    mvn clean package -DskipTests
